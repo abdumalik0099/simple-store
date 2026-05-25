@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <navbar>
+      <div class="nav container1">
+        <div class="texts">
+          <h2>Store</h2>
+          <p>Home</p>
+          <p>Products</p>
+          <p>Categories</p>
+        </div>
+        <div class="icons">
+          <div class="theme-switcher" style="position: relative">
+            <i class="ri-sun-line" id="themeBtn" style="cursor: pointer"></i>
+            <div class="dropdown-menu" id="themeDropdown">
+              <div class="dropdown-item" id="lightMode">Light</div>
+              <div class="dropdown-item" id="darkMode">Dark</div>
+              <div class="dropdown-item" id="systemMode">System</div>
+            </div>
+          </div>
+
+          <i class="ri-heart-line" id="navHeart"><p id="like">0</p></i>
+          <i class="ri-shopping-cart-line" id="navShop"><p id="shop">0</p></i>
+          <div class="flex"><i class="ri-user-line"></i>Login</div>
+        </div>
+      </div>
+      <div class="px2"></div>
+      <div class="oneText container1"><h1>Online Store</h1></div>
+
+      <div class="search container1">
+        <div class="inp">
+          <div class="div2">
+            <i class="ri-search-2-line"></i>
+            <input class="inputt" type="text" placeholder="Search products ..." />
+          </div>
+        </div>
+
+        <div class="filter"><i class="ri-filter-2-line"></i>Filter</div>
+      </div>
+    </navbar>
+
+    <div class="container"></div>
+    <div class="px2"></div>
+    <footer id="footer"></footer>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
+

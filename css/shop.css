@@ -1,0 +1,194 @@
+/* Asosiy sozlamalar */
+body {
+  background-color: #050a1d;
+  color: #ffffff;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.nav-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #3b82f6;
+  color: white;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Savat Asosiy Konteyneri */
+.cart-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.cart-page-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+/* 2 qatorli grid tizimi */
+.cart-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Chap tomon (Mahsulotlar) */
+.cart-items-section {
+  flex: 1;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.item-left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.item-img {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.item-details h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.item-price-unit {
+  color: #94a3b8;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* Plus/Minus tugmalari dizayni */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.qty-btn {
+  background: transparent;
+  border: 1px solid #94a3b8;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.qty-btn:hover {
+  border-color: white;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+}
+
+.item-right-price {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Pastki tugmalar (Clear, Continue) */
+.cart-actions-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.outline-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.outline-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* O'ng tomon (Order Summary) */
+.order-summary-section {
+  width: 350px;
+  background: #0b132a;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.order-summary-section h3 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #e2e8f0;
+}
+
+.summary-divider {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 20px 0;
+}
+
+.total-row {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.checkout-btn:hover {
+  background: #2563eb;
+}

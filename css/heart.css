@@ -1,0 +1,68 @@
+/* heart.html ichidagi container tahriri */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Masshtab va yuklashga barqaror grid */
+  gap: 25px; /* Kartalar orasidagi masofa */
+  padding: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Karta tahriri */
+.card {
+  background-color: #0b132a; /* To'q ko'k fon, asosiy sahifadagidek */
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Hover effekt */
+}
+
+/* Sarlavhadagi "item count" CSS */
+#wishlist-count {
+  font-weight: 400;
+  color: var(--app-muted);
+  font-size: 0.8em;
+  margin-left: 10px;
+  display: none; /* Boshlang'ich yashirin */
+}
+
+/* Qolgan tugmalar bloki CSS (oldingidan olingan va tasdiqlangan) */
+.card-action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 0 15px 15px; /* Karta info paddingga qo'shimcha */
+}
+
+.add-to-cart-btn-main {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  flex-grow: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.cart-remove-btn {
+  background-color: #1e293b;
+  color: #ef4444;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.orqa {
+  color: inherit;
+}

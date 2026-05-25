@@ -1,0 +1,807 @@
+/* Asosiy sahifa fon rangi va shrift */
+:root {
+  --app-surface: #ffffff;
+  --app-surface-2: #f1f5f9;
+  --app-border: #e2e8f0;
+  --app-muted: #64748b;
+  --app-primary: #2563eb;
+  --app-primary-hover: #1d4ed8;
+}
+
+body {
+  background-color: #050b14;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Kartalar joylashadigan asosiy konteyner */
+.container1 {
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Karta (Card) dizayni */
+.card {
+  background-color: #0b132a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+/* Rasm qismi uchun konteyner */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background-color: #050b14;
+  /* API rasmlari oq fonda bo'lgani uchun */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  background-color: #050b14;
+}
+
+/* O'ng tepadagi Yurakcha (Heart) tugmasi */
+.heart-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(5, 11, 20, 0.6);
+  border: none;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 5;
+  transition: background 0.2s;
+}
+
+.heart-btn:hover {
+  background-color: #1a1d3c;
+}
+
+/* Hover bo'lganda rasmni to'sadigan qatlam (Overlay) */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 11, 20, 0.65);
+  /* Rasmni sal qoraytirish */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  /* Oddiy holatda ko'rinmaydi */
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+/* Karta ustiga sichqoncha kelganda overlayni ko'rsatish */
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.image-container:hover img {
+  transition: 0.3s;
+  transform: scale(1.1);
+}
+
+/* Overlay ichidagi ko'zcha va savat tugmalari */
+.action-btn {
+  background-color: #1e293b;
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+}
+
+.action-btn:hover {
+  background-color: #182f54;
+  /* Hover bo'lganda ko'k rangga o'tadi */
+  transform: scale(1.05);
+}
+
+/* Kartaning pastki ma'lumotlar qismi */
+.card-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.card-title {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-desc {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.card-price {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: auto;
+  /* Narx doim tugmadan tepada chiroyli turishi uchun */
+  margin-bottom: 10px;
+}
+
+/* "Add to Cart" tugmasi */
+.add-to-cart-btn {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #2563eb;
+}
+
+/* =========================================================================
+   SINGLE PAGE (single.html) DESIGN
+   ========================================================================= */
+
+.single-page {
+  padding: 28px 20px 70px;
+}
+
+.single-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 26px;
+}
+
+.single-back:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.single-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.single-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+}
+
+.single-img {
+  width: 100%;
+  max-width: 680px;
+  max-height: 680px;
+  object-fit: contain;
+}
+
+.single-info {
+  max-width: 560px;
+}
+
+.single-category {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--app-border);
+  background: var(--app-surface);
+  color: var(--app-muted);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.single-title {
+  margin: 14px 0 10px;
+  font-size: 34px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.single-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.single-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: #fbbf24;
+  font-size: 18px;
+}
+
+.single-rating-text {
+  color: var(--app-muted);
+  font-weight: 600;
+}
+
+.single-price {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 10px 0 18px;
+}
+
+.single-tabs {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid var(--app-border);
+  background: var(--app-surface-2);
+}
+
+.single-tab {
+  border: none;
+  background: transparent;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--app-muted);
+  cursor: pointer;
+}
+
+.single-tab.is-active {
+  background: var(--app-surface);
+  color: inherit;
+}
+
+.single-panels {
+  margin-top: 18px;
+}
+
+.single-panel {
+  display: none;
+  color: var(--app-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.single-panel.is-active {
+  display: block;
+}
+
+.single-details {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.single-details li {
+  margin: 8px 0;
+}
+
+.single-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 26px 0 22px;
+}
+
+.single-qty-label {
+  font-weight: 800;
+}
+
+.single-qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.single-qty-btn {
+  width: 52px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--app-border);
+  background: var(--app-surface);
+  color: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.single-qty-btn:hover {
+  filter: brightness(1.02);
+}
+
+.single-qty-value {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.single-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.single-add {
+  flex: 1;
+  height: 52px;
+  border: none;
+  border-radius: 12px;
+  background: var(--app-primary);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.single-add:hover {
+  background: var(--app-primary-hover);
+}
+
+.single-like {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid var(--app-border);
+  background: var(--app-surface);
+  color: inherit;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.single-like i {
+  font-size: 22px;
+}
+
+@media (max-width: 900px) {
+  .single-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .single-media {
+    min-height: 360px;
+  }
+
+  .single-title {
+    font-size: 28px;
+  }
+
+  .single-info {
+    max-width: none;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.texts {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+}
+
+.texts h2 {
+  cursor: pointer;
+}
+
+.texts p {
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.3s;
+  cursor: pointer;
+}
+
+.texts p:hover {
+  border-bottom: 1px solid #fff;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  color: #fff;
+}
+
+.icons p {
+  position: absolute;
+  top: -25px;
+  right: -8px;
+  padding: 5px;
+  font-size: 10px;
+  border-radius: 150px;
+  background-color: #0f59cf;
+}
+
+.icons i {
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: color 0.3s;
+  padding: 5px;
+}
+
+.icons i:hover {
+  background-color: #1E293B;
+}
+
+.flex {
+  align-items: center;
+  border: 2px solid #56545e;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flex:hover {
+  background-color: #1E293B;
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  right: 0;
+  background: #0b132a;
+  border: 1px solid #1e293b;
+  padding: 10px;
+  border-radius: 8px;
+  display: none;
+  /* Yashirin holat */
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dropdown-menu.show {
+  display: flex;
+}
+
+.dropdown-item {
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  color: #3b82f6;
+}
+
+
+
+.px2 {
+  width: 100%;
+  height: 1px;
+  background-color: #1e293b;
+}
+
+.oneText {
+  color: #fff;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.inp {
+  background-color: transparent;
+  border: 1px solid #050b14;
+  padding: 2px;
+  border-radius: 6px;
+  color: #fff;
+  width: 90%;
+}
+
+.div2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: 1px solid #1e293b;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.div2 input {
+  width: 100%;
+  height: 100%;
+  padding: 0.2rem 0.5rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  width: 7%;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #1e293b;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+#like, #shop{
+  display: none ;
+}
+.ri-poker-hearts-fill{
+  color: #ff0000
+}
+
+
+#heartToIndex{
+  cursor: pointer;
+}
+
+
+
+
+
+/* =========================================================================
+   CINEMATIC ANIMATION STYLES (METEOR & 3D SPIN) - MUKAMMAL VERSIYA
+   ========================================================================= */
+
+/* --- A. Light Mode: Meteorit Vizualizatsiyasi --- */
+.space-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 999999;
+  pointer-events: none;
+  background-color: transparent;
+  transition: background-color 0.2s, opacity 0.5s ease;
+}
+
+.cinematic-meteorite {
+  position: absolute;
+  width: 50px; height: 50px;
+  background: radial-gradient(circle, #fff370 10%, #ff6200 50%, transparent 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 50px #ff4500, 0 0 100px #ff0000;
+  top: -100px; right: -100px;
+  animation: meteor-strike 0.6s linear forwards;
+}
+
+/* Meteoritning olovli dumi - O'NG TEPAGA QARATILDI */
+.cinematic-meteorite::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 300px; height: 15px;
+  /* Dumning nuri o'ngga qarab yo'qoladi */
+  background: linear-gradient(to right, rgba(255, 69, 0, 0.9), transparent);
+  /* Meteorit chap-pastga tushayotgani uchun dumini orqaga (-45 gradus) qaratamiz */
+  transform: translateY(-50%) rotate(-45deg); 
+  transform-origin: left center;
+}
+
+.cosmic-explosion {
+  position: absolute;
+  top: 85%; left: 15%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 20px; height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 80px 40px #ffffff, 0 0 200px 80px #ff8c00;
+  animation: big-bang-flash 0.3s ease-out forwards;
+}
+
+@keyframes meteor-strike {
+  0% { top: -100px; right: -100px; }
+  100% { top: 85%; right: 85%; }
+}
+
+@keyframes big-bang-flash {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+  40% { background: #ffea00; }
+  100% { transform: translate(-50%, -50%) scale(250); opacity: 1; }
+}
+
+/* --- B. Dark Mode: Mukammal 3D Spin (Qadam-baqadam Scale mantiqi bilan) --- */
+html {
+  background-color: #050b14;
+  overflow-x: hidden;
+}
+
+.dark-galaxy-spin body {
+  /* Umumiy vaqt 2.5 soniya, silliq ishlashi uchun ease-in-out */
+  animation: step-by-step-rotation 2.5s ease-in-out forwards;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+}
+
+@keyframes step-by-step-rotation {
+  /* 1. Boshlang'ich holat */
+  0% {
+    transform: scale(1) rotate(0deg) translateX(0);
+    opacity: 1;
+  }
+  
+  /* 2. Sekinlik bilan 0.7 gacha kichrayadi, opacity 0.4 bo'ladi (aylanish umuman yo'q) */
+  20% {
+    transform: scale(0.9) rotate(0deg) translateX(0);
+    opacity: 0.4;
+  }
+  
+  /* 3. Kichraygach, yengil pauza (to'xtab turish effekti) */
+  25% {
+    transform: scale(0.9) rotate(0deg) translateX(0);
+    opacity: 0.4;
+  }
+  
+  /* 4. Endi aylanib chapga chiqib ketadi */
+  45% {
+    transform: scale(0.9) rotate(-180deg) translateX(-150vw);
+    opacity: 0.4;
+    display: none;
+  }
+  
+  /* 5. Ko'rinmas holatda o'ngga o'tadi (rejim shu yerda o'zgaradi) */
+  55% {
+    transform: scale(0.9) rotate(-180deg) translateX(150vw);
+    opacity: 0.4;
+    display: none;
+  }
+  
+  /* 6. O'ngdan aylanib o'rtaga keladi va TO'XTAYDI */
+  75% {
+    transform: scale(0.9) rotate(-360deg) translateX(0);
+    opacity: 0.4;
+    
+  }
+  
+  /* 7. O'rtada aylanishsiz yengil pauza qiladi */
+  80% {
+    transform: scale(0.9) rotate(-360deg) translateX(0);
+    opacity: 0.4;
+  }
+  
+  /* 8. Aylanishsiz, faqat joyida turib sekin scale(1) ga va opacity 1 ga qaytadi */
+  100% {
+    transform: scale(1) rotate(-360deg) translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fle{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px 0;
+  gap: 1rem;
+  border-radius: 6px;
+}
+
+.fle i{
+  font-size: 26px;
+  color: #64748b;
+  transition: color 0.3s;
+}
+.fle i:hover{
+  color: #fff;
+}
+
+.footer li {
+  list-style: none;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.footer li:hover {
+  color: #fff;
+}
+
+.qator1 li{
+  list-style: none;
+}
+.qator2 li{
+  list-style: none;
+}
+.qator3 li{
+  list-style: none;
+}
+.qator4 li{
+  list-style: none;
+}
+.buttonFooter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.leftFooter, .rightFooter {
+  cursor: pointer;
+  color: #64748b;
+}
