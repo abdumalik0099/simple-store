@@ -1,6 +1,7 @@
 import { initTheme } from "./js/theme.js";
 import initSingleRedirect from "./js/singleRedirect.js";
 import { footerF } from "./js/footer.js";
+import { initNavPopovers } from "./js/navPopovers.js";
 
 const container = document.querySelector(".container");
 let likedProducts = JSON.parse(localStorage.getItem("liked")) || [];
@@ -25,6 +26,7 @@ updateNavbar();
 initTheme({ defaultTheme: "dark", animateOnLoad: false });
 initSingleRedirect({ pagePath: "./html/single.html" });
 footerF();
+initNavPopovers();
 
 fetch("https://fakestoreapi.com/products")
   .then((res) => res.json())

@@ -1,5 +1,6 @@
 import { initTheme, navbarF } from "./theme.js";
 import { footerF } from "./footer.js";
+import { initNavPopovers } from "./navPopovers.js";
 
 navbarF();
 initTheme();
@@ -28,6 +29,7 @@ function updateNavbar() {
 }
 
 updateNavbar();
+initNavPopovers();
 
 // Navbar navigatsiya (single.html html/ papkada turgani uchun)
 document.getElementById("navHeart")?.addEventListener("click", () => {

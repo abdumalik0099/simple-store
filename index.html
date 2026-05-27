@@ -11,16 +11,17 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <navbar>
       <div class="nav container1">
         <div class="texts">
-          <h2>Store</h2>
-          <p>Home</p>
-          <p>Products</p>
-          <p>Categories</p>
+          <h2 class="logo">Store</h2>
+          <p class="all">Home</p>
+          <p class="all">Products</p>
+          <p onclick="window.location.href='./html/kotegory.html'" class="all">Categories</p>
         </div>
         <div class="icons">
           <div class="theme-switcher" style="position: relative">
@@ -34,11 +35,11 @@
 
           <i class="ri-heart-line" id="navHeart"><p id="like">0</p></i>
           <i class="ri-shopping-cart-line" id="navShop"><p id="shop">0</p></i>
-          <div class="flex"><i class="ri-user-line"></i>Login</div>
+          <div class="flex" id="google-button-container"><i class="ri-user-line"></i>Login</div>
         </div>
       </div>
       <div class="px2"></div>
-      <div class="oneText container1"><h1>Online Store</h1></div>
+      <div class="oneText container1"><h1 class="oneTextt">Online Store</h1></div>
 
       <div class="search container1">
         <div class="inp">
@@ -53,6 +54,7 @@
     </navbar>
 
     <div class="container"></div>
+    <div class="modal"></div>
     <div class="px2"></div>
     <footer id="footer"></footer>
 

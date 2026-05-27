@@ -30,7 +30,9 @@ body {
   gap: 20px;
   padding: 20px;
 }
-
+.oneText{
+  cursor: pointer;
+}
 /* Karta (Card) dizayni */
 .card {
   background-color: #0b132a;
@@ -490,6 +492,87 @@ body {
   background-color: #1E293B;
 }
 
+.icons i.nav-popover-target {
+  position: relative;
+}
+
+.nav-popover {
+  display: block;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 200px;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition:
+    opacity 0.15s ease,
+    visibility 0.15s ease,
+    transform 0.15s ease;
+
+  z-index: 50;
+}
+
+.nav-popover::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 18px;
+  width: 14px;
+  height: 14px;
+  background: var(--app-surface);
+  border-left: 1px solid var(--app-border);
+  border-top: 1px solid var(--app-border);
+  transform: rotate(45deg);
+}
+
+.icons i.nav-popover-target:hover .nav-popover,
+.icons i.nav-popover-target:focus-within .nav-popover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-popover-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.nav-popover-sub {
+  display: block;
+  color: var(--app-muted);
+  font-size: 14px;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.nav-popover-btn {
+  display: block;
+  width: 90%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: var(--app-primary);
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav-popover-btn:hover {
+  background: var(--app-primary-hover);
+}
+
 .flex {
   align-items: center;
   border: 2px solid #56545e;
@@ -804,4 +887,98 @@ html {
 .leftFooter, .rightFooter {
   cursor: pointer;
   color: #64748b;
+}
+
+
+.hhh{
+  margin: 0px auto 40px;
+}
+.orqaga{
+  cursor: pointer;
+  padding: 10px;
+}
+.categoriyalar{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+#categ1, #categ2, #categ3, #categ4 {
+  border: 1px solid #1e293b;
+  padding: 0px 20px 20px;
+  border-radius: 10px;
+  transition: color 0.3s;
+}
+
+.categotyBtn{
+  width: 100%;
+  padding: 10px 0;
+  border: 1px solid #1e293b;
+  color: #fff;
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+
+
+.categotyBtn:hover{
+  background-color: #1e293b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modal divini butun ekran bo'ylab yoyib, o'rtaga joylaymiz */
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+  width: 100%;
+}
+
+/* Login kartasi uchun stil */
+.login-card {
+  background-color: #111827;
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+  width: 100%;
+  max-width: 400px;
+  color: white;
+}
+
+.login-card input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px 0;
+  background-color: #030712;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }

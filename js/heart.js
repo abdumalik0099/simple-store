@@ -2,6 +2,7 @@ import initHeartRedirect from "./heartRedirect.js";
 import { initTheme } from "./theme.js";
 import initSingleRedirect from "./singleRedirect.js";
 import { footerF } from "./footer.js";
+import { initNavPopovers } from "./navPopovers.js";
 
 
 
@@ -9,6 +10,7 @@ initTheme();
 initHeartRedirect();
 initSingleRedirect({ pagePath: "./single.html" });
 footerF();
+initNavPopovers();
 
 
 

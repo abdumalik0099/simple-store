@@ -308,8 +308,8 @@ export function navbarF(container) {
   nav.classList.add("nav", "container1");
   nav.innerHTML = `
   <div class="texts">
-          <h2>Store</h2>
-          <p>Home</p>
+          <h2 class="logo" onclick="window.location.href='../index.html'" style="cursor: pointer;">Store</h2>
+          <p onclick="window.location.href='../index.html'">Home</p>
           <p>Products</p>
           <p>Categories</p>
         </div>
@@ -331,3 +331,71 @@ export function navbarF(container) {
   navbarEl.appendChild(nav);
   return nav;
 }
+
+export function modal() {
+  const btn = document.querySelector(".flex"); // Sizning asl tugmangiz
+  const container = document.querySelector(".container");
+  const searchDiv = document.querySelector(".search");
+  const modalDiv = document.querySelector(".modal");
+  const oneText = document.querySelector(".oneTextt");
+  const savedEmail = localStorage.getItem("userEmail");
+
+  // 1. Agar foydalanuvchi kirgan bo'lsa, tugmani yashirib, avatar qo'yamiz
+  if (savedEmail && btn) {
+    btn.style.display = "none"; // Asl tugmani yashiramiz
+    const avatar = document.createElement("div");
+    avatar.textContent = savedEmail[0].toUpperCase();
+    avatar.style.cssText = "width: 40px; height: 40px; background: #2563eb; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: bold; margin-left: 10px;";
+    
+    // Avatarni tugmaning ota elementi ichiga qo'shamiz
+    btn.parentNode.appendChild(avatar);
+
+    // Avatar bosilsa tizimdan chiqish
+    avatar.addEventListener("click", () => {
+      localStorage.removeItem("userEmail");
+      location.reload();
+    });
+  }
+
+  // 2. Agar elementlar yo'q bo'lsa, funksiyani to'xtatamiz
+  if (!btn || !container || !searchDiv || !modalDiv || !oneText) return;
+
+  // 3. Login hodisasi (faqat btn bo'lsa ishlaydi)
+  btn.addEventListener("click", () => {
+    container.style.display = "none";
+    searchDiv.style.display = "none";
+    modalDiv.style.display = "flex";
+    oneText.textContent = "< Orqaga";
+    
+    modalDiv.innerHTML = `
+      <div class="login-card">
+        <h2>Login</h2>
+        <p>Enter your email to continue</p>
+        <label>Email</label>
+        <input type="email" id="userEmail" placeholder="your@email.com">
+        <label>Password</label>
+        <input type="password" placeholder="********">
+        <button id="loginBtn">Login</button>
+      </div>
+    `;
+
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      const email = document.getElementById("userEmail").value;
+      if (email) {
+        localStorage.setItem("userEmail", email);
+        location.reload();
+      }
+    });
+  });
+
+  // 4. Orqaga qaytish
+  oneText.addEventListener("click", () => {
+    container.style.display = "";
+    searchDiv.style.display = "";
+    modalDiv.style.display = "none";
+    oneText.textContent = "Online Store";
+  });
+}
+
+// Funksiyani ishga tushiramiz
+modal();

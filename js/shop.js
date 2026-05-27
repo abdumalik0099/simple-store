@@ -1,6 +1,7 @@
 import initHeartRedirect from "./heartRedirect.js";
 import { initTheme } from "./theme.js";
 import { footerF } from "./footer.js";
+import { initNavPopovers } from "./navPopovers.js";
 
 const cartItemsContainer = document.getElementById("cart-items-container");
 const subtotalEl = document.getElementById("subtotal");
@@ -129,6 +130,7 @@ document.getElementById("continue-shopping-btn")?.addEventListener("click", () =
 initTheme();
 initHeartRedirect();
 footerF();
+initNavPopovers();
 
 updateNavbarCount();
 if (cartItemsContainer && cartActionsBottom && subtotalEl && taxEl && totalEl) {
